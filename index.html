@@ -173,42 +173,58 @@ body{font-family:var(--body);background:var(--black);color:var(--white);line-hei
 .rm-inv-body{font-size:12px;color:var(--pale);line-height:1.7;font-style:italic;}
 .rm-inv-body strong{color:var(--white);font-style:normal;}
 
-/* FINANCE BRIDGE */
-.fin-bridge{display:grid;grid-template-columns:1fr auto 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:1.5rem 0;}
-@media(max-width:720px){.fin-bridge{grid-template-columns:1fr;}}
-.fin-col{padding:1.75rem 1.5rem;display:flex;flex-direction:column;gap:1rem;}
-.fin-col-left{background:var(--dark);border-right:1px solid var(--line);}
-.fin-col-right{background:var(--off);}
-.fin-col-head{display:flex;align-items:center;gap:.75rem;padding-bottom:.75rem;border-bottom:1px solid var(--line);}
-.fin-col-icon{font-size:1.4rem;line-height:1;}
-.fin-col-title{font-family:var(--mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--pale);}
-.fin-col-sub{font-size:11px;color:var(--mute);font-style:italic;margin-top:2px;}
-.fin-stat{padding:.85rem 1rem;background:rgba(0,0,0,.2);border-radius:6px;border-left:2px solid var(--line);}
-.fin-stat-n{font-family:var(--serif);font-size:2.2rem;line-height:1;margin-bottom:.3rem;}
-.fin-stat-label{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);margin-bottom:.4rem;}
-.fin-stat-body{font-size:12px;color:var(--mute);line-height:1.65;font-style:italic;}
-.fin-arrow-col{display:flex;align-items:center;justify-content:center;background:var(--mid);padding:0 1rem;border-right:1px solid var(--line);}
-.fin-transform-arrow{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
-.fin-arr-line{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--gold));opacity:.5;}
-.fin-arr-label{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);text-align:center;line-height:1.6;opacity:.7;}
-.fin-arr-head{color:var(--gold);font-size:1.3rem;opacity:.7;}
-@media(max-width:720px){.fin-arrow-col{padding:1rem;border-right:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}.fin-transform-arrow{flex-direction:row;}.fin-arr-line{width:40px;height:1px;background:linear-gradient(to right,transparent,var(--gold));}.fin-arr-head{transform:rotate(90deg);}}
-.fin-live{border:1px solid var(--line);border-radius:8px;overflow:hidden;}
-.fin-live-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);padding:.6rem .85rem;background:var(--dark);border-bottom:1px solid var(--line);}
-.fin-live-demo{padding:.85rem;display:flex;flex-direction:column;gap:.6rem;background:var(--off);}
-.fin-live-row{display:flex;align-items:center;gap:.6rem;}
-.fin-live-name{font-size:11px;color:var(--pale);width:160px;flex-shrink:0;}
-.fin-slider{flex:1;height:2px;appearance:none;background:var(--line);border-radius:2px;outline:none;cursor:pointer;}
-.fin-slider::-webkit-slider-thumb{appearance:none;width:10px;height:10px;border-radius:50%;background:var(--gold);cursor:pointer;}
-.fin-live-val{font-family:var(--mono);font-size:11px;color:var(--gold2);width:36px;text-align:right;flex-shrink:0;}
-.fin-result{padding:.85rem;background:var(--dark);border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.5rem;}
-.fin-result-row{display:flex;justify-content:space-between;align-items:center;}
-.fin-result-label{font-size:11px;color:var(--mute);}
-.fin-result-val{font-family:var(--mono);font-size:12px;font-weight:600;}
-.fin-note{font-size:11px;color:var(--mute);font-style:italic;line-height:1.6;border-top:1px solid var(--line);padding-top:.5rem;margin-top:.25rem;}
-.fin-caption{font-size:12px;color:var(--mute);line-height:1.7;font-style:italic;border-top:1px solid var(--line);padding-top:.85rem;}
-.fin-caption strong{color:var(--pale);font-style:normal;}
+/* ── SLIDE 05 · DUEL PANELS ── */
+.duel{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px 12px 0 0;overflow:hidden;margin-bottom:0;}
+@media(max-width:800px){.duel{grid-template-columns:1fr;}}
+.panel{display:flex;flex-direction:column;}
+.panel-left{background:var(--dark);border-right:1px solid var(--line);}
+.panel-right{background:var(--off);}
+.panel-head{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.75rem;border-bottom:2px solid var(--line);}
+.panel-left .panel-head{border-bottom-color:var(--red);}
+.panel-right .panel-head{border-bottom-color:var(--gold);}
+.panel-icon{font-size:1.6rem;line-height:1;flex-shrink:0;}
+.panel-title{font-family:var(--mono);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--white);margin-bottom:2px;}
+.panel-sub{font-size:11px;color:var(--mute);font-style:italic;}
+.panel-body{padding:1.5rem 1.75rem;display:flex;flex-direction:column;gap:1.25rem;flex:1;}
+.stat-card{background:rgba(0,0,0,.2);border-radius:8px;padding:1.1rem 1.25rem;border-left:3px solid var(--line);}
+.panel-left .stat-card{border-left-color:var(--red);}
+.panel-right .stat-card{border-left-color:var(--gold);}
+.stat-n{font-family:var(--serif);font-size:2.6rem;line-height:1;margin-bottom:.35rem;}
+.panel-left .stat-n{color:var(--red);}
+.panel-right .stat-n{color:var(--gold2);}
+.stat-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--mute);margin-bottom:.5rem;}
+.stat-body{font-size:13px;color:var(--pale);line-height:1.7;font-style:italic;}
 
+/* ── SLIDER BAR ── */
+.slider-bar{border:1px solid var(--line);border-top:none;background:var(--mid);padding:1.5rem 2rem;display:flex;flex-direction:column;gap:1.25rem;}
+.slider-bar-head{display:flex;align-items:center;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--line);}
+.slider-bar-icon{font-size:1.2rem;line-height:1;flex-shrink:0;opacity:.7;}
+.slider-bar-title{font-family:var(--mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin-bottom:2px;}
+.slider-bar-sub{font-size:11px;color:var(--mute);font-style:italic;}
+.slider-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem 3rem;}
+@media(max-width:800px){.slider-grid{grid-template-columns:1fr;}}
+.slider-row{display:flex;align-items:center;gap:.75rem;}
+.slider-name{font-size:13px;color:var(--pale);width:180px;flex-shrink:0;line-height:1.3;}
+.fin-slider{flex:1;height:4px;appearance:none;-webkit-appearance:none;background:var(--line);border-radius:2px;outline:none;cursor:pointer;}
+.fin-slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(201,168,76,.25);transition:transform .15s,box-shadow .15s;}
+.fin-slider::-webkit-slider-thumb:hover{transform:scale(1.2);box-shadow:0 0 0 5px rgba(201,168,76,.2);}
+.fin-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;}
+.slider-val{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--gold2);width:42px;text-align:right;flex-shrink:0;}
+
+/* ── VERDICT STRIP ── */
+.verdict-strip{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;background:var(--mid);padding:2rem 2.5rem;display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:start;}
+@media(max-width:800px){.verdict-strip{grid-template-columns:1fr;}}
+.verdict-col{}
+.verdict-eyebrow{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--mute);margin-bottom:.6rem;}
+.verdict-num{font-family:var(--serif);font-size:2.8rem;line-height:1;margin-bottom:.4rem;}
+.verdict-label{font-size:13px;color:var(--pale);font-style:italic;line-height:1.6;}
+.verdict-divider{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding-top:.25rem;}
+.vd-line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:.4;}
+.vd-label{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);text-align:center;line-height:1.7;opacity:.7;white-space:nowrap;}
+.scenario-note{grid-column:1 / -1;border-top:1px solid var(--line);padding-top:1.25rem;font-size:13px;color:var(--mute);font-style:italic;line-height:1.8;text-align:center;max-width:72ch;margin:0 auto;}
+.scenario-note strong{color:var(--pale);font-style:normal;}
+
+/* NAV */
 .nav-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:100;}
 .nav-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;border:1px solid var(--mute);transition:all .2s;}
 .nav-dot.active{background:var(--gold);border-color:var(--gold);transform:scale(1.3);}
@@ -287,52 +303,15 @@ body{font-family:var(--body);background:var(--black);color:var(--white);line-hei
   <div class="slide-num">02 — Matrix · The compressor · NPA's new lingua franca</div>
   <h2>One colour.<br><em>One answer.</em></h2>
   <p class="lead">The ROYGBIV gradient is Uganda's new shared language for district performance — offered by Ukubona LLC as NPA's standard visual vocabulary. No statistics required. No training required. Red means act now. Blue means replicate this.</p>
-
   <div class="rg-grid">
-    <div class="rg-cell">
-      <div class="rg-swatch" style="background:#c93b2a"></div>
-      <div class="rg-label">Red</div>
-      <div class="rg-val">0.75 – 1.0</div>
-      <div class="rg-meaning">Critical — act now</div>
-    </div>
-    <div class="rg-cell">
-      <div class="rg-swatch" style="background:#d4622a"></div>
-      <div class="rg-label">Orange</div>
-      <div class="rg-val">0.60 – 0.75</div>
-      <div class="rg-meaning">Urgent — monitor</div>
-    </div>
-    <div class="rg-cell">
-      <div class="rg-swatch" style="background:#c9a22a"></div>
-      <div class="rg-label">Yellow</div>
-      <div class="rg-val">0.45 – 0.60</div>
-      <div class="rg-meaning">Elevated — watch</div>
-    </div>
-    <div class="rg-cell">
-      <div class="rg-swatch" style="background:#8ab83a"></div>
-      <div class="rg-label">Lime</div>
-      <div class="rg-val">0.30 – 0.45</div>
-      <div class="rg-meaning">Improving</div>
-    </div>
-    <div class="rg-cell">
-      <div class="rg-swatch" style="background:#2a6b3a"></div>
-      <div class="rg-label">Green</div>
-      <div class="rg-val">0.18 – 0.30</div>
-      <div class="rg-meaning">Stable — sustain</div>
-    </div>
-    <div class="rg-cell">
-      <div class="rg-swatch" style="background:#2a6b6b"></div>
-      <div class="rg-label">Teal</div>
-      <div class="rg-val">0.08 – 0.18</div>
-      <div class="rg-meaning">Good — replicate</div>
-    </div>
-    <div class="rg-cell">
-      <div class="rg-swatch" style="background:#2a4a8c"></div>
-      <div class="rg-label">Blue</div>
-      <div class="rg-val">0.00 – 0.08</div>
-      <div class="rg-meaning">Best — the model</div>
-    </div>
+    <div class="rg-cell"><div class="rg-swatch" style="background:#c93b2a"></div><div class="rg-label">Red</div><div class="rg-val">0.75 – 1.0</div><div class="rg-meaning">Critical — act now</div></div>
+    <div class="rg-cell"><div class="rg-swatch" style="background:#d4622a"></div><div class="rg-label">Orange</div><div class="rg-val">0.60 – 0.75</div><div class="rg-meaning">Urgent — monitor</div></div>
+    <div class="rg-cell"><div class="rg-swatch" style="background:#c9a22a"></div><div class="rg-label">Yellow</div><div class="rg-val">0.45 – 0.60</div><div class="rg-meaning">Elevated — watch</div></div>
+    <div class="rg-cell"><div class="rg-swatch" style="background:#8ab83a"></div><div class="rg-label">Lime</div><div class="rg-val">0.30 – 0.45</div><div class="rg-meaning">Improving</div></div>
+    <div class="rg-cell"><div class="rg-swatch" style="background:#2a6b3a"></div><div class="rg-label">Green</div><div class="rg-val">0.18 – 0.30</div><div class="rg-meaning">Stable — sustain</div></div>
+    <div class="rg-cell"><div class="rg-swatch" style="background:#2a6b6b"></div><div class="rg-label">Teal</div><div class="rg-val">0.08 – 0.18</div><div class="rg-meaning">Good — replicate</div></div>
+    <div class="rg-cell"><div class="rg-swatch" style="background:#2a4a8c"></div><div class="rg-label">Blue</div><div class="rg-val">0.00 – 0.08</div><div class="rg-meaning">Best — the model</div></div>
   </div>
-
   <div class="pullquote">
     Red is where Uganda is losing.<br>
     Blue is where Uganda is winning.<br>
@@ -354,7 +333,6 @@ body{font-family:var(--body);background:var(--black);color:var(--white);line-hei
   <div class="slide-num">03 — Vector · The policymaker sets the direction</div>
   <h2>Change the question.<br><em>The map answers.</em></h2>
   <p class="lead">The dropdown is the vector: it sets the direction of the board's gaze across all 146 districts. Every new national priority — mental health today, teenage pregnancy tomorrow, climate stress next year — is simply a new item in the menu. The engine does not change.</p>
-
   <div class="dd-wrap">
     <div class="dd-bar">Live demo — select an indicator</div>
     <div class="dd-body">
@@ -374,13 +352,11 @@ body{font-family:var(--body);background:var(--black);color:var(--white);line-hei
       <div class="dd-note" id="ddNote"><strong>Mental health burden:</strong> 24.2% adult prevalence nationally. Kampala, Arua, Gulu show highest district scores. Fewer than 1 in 10 people in need receive care. The red districts are the Monday-morning action list.</div>
     </div>
   </div>
-
   <div class="pullquote">
     The dropdown gets longer every year.<br>
     The engine does not change.<br>
     <em>That is the 50-year roadmap — one menu item at a time.</em>
   </div>
-
   <div class="roadmap-toggle" onclick="rmTog()" id="rmBtn">
     <span class="rm-plus" id="rmIcon">+</span>
     <div class="rm-toggle-text">
@@ -421,54 +397,19 @@ body{font-family:var(--body);background:var(--black);color:var(--white);line-hei
   <div class="slide-num">04 — Pipeline · How data moves · District → Decision</div>
   <h2>No reports.<br><em>No waiting.</em></h2>
   <p class="lead">The pipeline is what separates a digital twin from a static dashboard. District officers submit through a simple form with a token. The engine updates. The map recolours. The decision is available before the meeting ends.</p>
-
   <div class="api-diag">
-    <div class="api-diag-head">
-      Data flow — five nodes, no latency
-      <span>146 districts · live</span>
-    </div>
+    <div class="api-diag-head">Data flow — five nodes, no latency<span>146 districts · live</span></div>
     <div class="api-nodes">
-      <div class="api-node">
-        <div class="api-node-box">
-          <span class="api-node-sym">⌖</span>
-          <span class="api-node-name">District</span>
-          <span class="api-node-sub">Officer submits</span>
-        </div>
-      </div>
+      <div class="api-node"><div class="api-node-box"><span class="api-node-sym">⌖</span><span class="api-node-name">District</span><span class="api-node-sub">Officer submits</span></div></div>
       <div class="api-arrow">→</div>
-      <div class="api-node">
-        <div class="api-node-box">
-          <span class="api-node-sym">⊕</span>
-          <span class="api-node-name">NPA</span>
-          <span class="api-node-sub">Policy frame</span>
-        </div>
-      </div>
+      <div class="api-node"><div class="api-node-box"><span class="api-node-sym">⊕</span><span class="api-node-name">NPA</span><span class="api-node-sub">Policy frame</span></div></div>
       <div class="api-arrow">→</div>
-      <div class="api-node">
-        <div class="api-node-box">
-          <span class="api-node-sym" style="color:var(--gold)">◎</span>
-          <span class="api-node-name" style="color:var(--gold2)">Ukubona</span>
-          <span class="api-node-sub">Engine · computes</span>
-        </div>
-      </div>
+      <div class="api-node"><div class="api-node-box"><span class="api-node-sym" style="color:var(--gold)">◎</span><span class="api-node-name" style="color:var(--gold2)">Ukubona</span><span class="api-node-sub">Engine · computes</span></div></div>
       <div class="api-arrow">→</div>
-      <div class="api-node">
-        <div class="api-node-box">
-          <span class="api-node-sym">▲</span>
-          <span class="api-node-name">Map</span>
-          <span class="api-node-sub">Recolours live</span>
-        </div>
-      </div>
+      <div class="api-node"><div class="api-node-box"><span class="api-node-sym">▲</span><span class="api-node-name">Map</span><span class="api-node-sub">Recolours live</span></div></div>
       <div class="api-arrow">→</div>
-      <div class="api-node">
-        <div class="api-node-box">
-          <span class="api-node-sym">1</span>
-          <span class="api-node-name">Decision</span>
-          <span class="api-node-sub">Board acts</span>
-        </div>
-      </div>
+      <div class="api-node"><div class="api-node-box"><span class="api-node-sym">1</span><span class="api-node-name">Decision</span><span class="api-node-sub">Board acts</span></div></div>
     </div>
-    <!-- TASTEFUL DOTTED FEEDBACK -->
     <div class="api-feedback">
       <div class="fb-node">Decision</div>
       <div class="fb-seg"></div><div class="fb-head">⤶</div>
@@ -479,26 +420,12 @@ body{font-family:var(--body);background:var(--black);color:var(--white);line-hei
       <div class="fb-node" style="font-style:italic;opacity:.5;font-size:9px">tasteful · optional</div>
     </div>
   </div>
-
   <p style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);margin-bottom:.75rem">Three access doors — what district officers use</p>
   <div class="api-endpoint">
-    <div class="ep-row">
-      <span class="ep-method ep-get">GET</span>
-      <span class="ep-path">/districts</span>
-      <span class="ep-desc">Returns all 146 districts with current scores — feeds the map automatically</span>
-    </div>
-    <div class="ep-row">
-      <span class="ep-method ep-post">POST</span>
-      <span class="ep-path">/intervene</span>
-      <span class="ep-desc">District officer submits updated figures via token — map recolours in real time</span>
-    </div>
-    <div class="ep-row">
-      <span class="ep-method ep-post">POST</span>
-      <span class="ep-path">/whatif</span>
-      <span class="ep-desc">Scenario planning — "what if we reduce burden here by 15%?" No commitment, instant preview</span>
-    </div>
+    <div class="ep-row"><span class="ep-method ep-get">GET</span><span class="ep-path">/districts</span><span class="ep-desc">Returns all 146 districts with current scores — feeds the map automatically</span></div>
+    <div class="ep-row"><span class="ep-method ep-post">POST</span><span class="ep-path">/intervene</span><span class="ep-desc">District officer submits updated figures via token — map recolours in real time</span></div>
+    <div class="ep-row"><span class="ep-method ep-post">POST</span><span class="ep-path">/whatif</span><span class="ep-desc">Scenario planning — "what if we reduce burden here by 15%?" No commitment, instant preview</span></div>
   </div>
-
   <div class="pullquote">
     Each district officer holds a token.<br>
     They submit. The map updates.<br>
@@ -514,96 +441,121 @@ body{font-family:var(--body);background:var(--black);color:var(--white);line-hei
   <h2>Static numbers.<br><em>Dynamic losses.</em></h2>
   <p class="lead">The figures below come from Uganda's most recent national health report — a static PDF, published once a year, consulted rarely. The twin turns every one of these numbers into a live dial. Move a weight. The map responds. See the economic consequence. No country in the world has this.</p>
 
-  <!-- THE TRANSFORMATION: PDF → TWIN -->
-  <div class="fin-bridge">
-    <div class="fin-col fin-col-left">
-      <div class="fin-col-head">
-        <span class="fin-col-icon">📄</span>
-        <div>
-          <div class="fin-col-title">The annual PDF</div>
-          <div class="fin-col-sub">Static · Published once · Consulted rarely</div>
+  <!-- ════ DUEL PANELS ════ -->
+  <div class="duel">
+
+    <!-- LEFT: Static PDF -->
+    <div class="panel panel-left">
+      <div class="panel-head">
+        <span class="panel-icon">📄</span>
+        <div class="panel-head-text">
+          <div class="panel-title">The Annual PDF</div>
+          <div class="panel-sub">Static · Published once · Consulted rarely</div>
         </div>
       </div>
-      <div class="fin-stat">
-        <div class="fin-stat-n" style="color:var(--red)">US$4.5B</div>
-        <div class="fin-stat-label">Projected annual losses by 2040</div>
-        <div class="fin-stat-body">Mental health alone. Business-as-usual scenario. Productivity loss dominates — not treatment costs. This number grows faster than GDP. It is printed once a year and filed.</div>
-      </div>
-      <div class="fin-stat">
-        <div class="fin-stat-n" style="color:var(--red)">71%</div>
-        <div class="fin-stat-label">Rise in facility cases 2021–2024</div>
-        <div class="fin-stat-body">494,326 → 843,295 reported cases. Yet fewer than 1 in 10 people in need receive care. The cases are visible. The response is not matching. This is a table in Annex 3.</div>
-      </div>
-      <div class="fin-stat">
-        <div class="fin-stat-n" style="color:var(--red)">55%</div>
-        <div class="fin-stat-label">District health posts unfilled</div>
-        <div class="fin-stat-body">5,371 posts missing. 96% of the gap at community level — HC III, HC IV, General Hospital. Not at national referral. This is a footnote in the workforce chapter.</div>
+      <div class="panel-body">
+        <div class="stat-card">
+          <div class="stat-n">US$4.5B</div>
+          <div class="stat-label">Projected annual losses by 2040</div>
+          <div class="stat-body">Mental health alone. Business-as-usual scenario. Productivity loss dominates — not treatment costs. This number grows faster than GDP. It is printed once a year and filed.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-n">71%</div>
+          <div class="stat-label">Rise in facility cases 2021–2024</div>
+          <div class="stat-body">494,326 → 843,295 reported cases. Yet fewer than 1 in 10 people in need receive care. The cases are visible. The response is not matching. This is a table in Annex 3.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-n">55%</div>
+          <div class="stat-label">District health posts unfilled</div>
+          <div class="stat-body">5,371 posts missing. 96% of the gap at community level — HC III, HC IV, General Hospital. Not at national referral. This is a footnote in the workforce chapter.</div>
+        </div>
       </div>
     </div>
 
-    <div class="fin-arrow-col">
-      <div class="fin-transform-arrow">
-        <div class="fin-arr-line"></div>
-        <div class="fin-arr-label">The twin<br>transforms<br>this</div>
-        <div class="fin-arr-head">→</div>
+    <!-- RIGHT: Live Twin -->
+    <div class="panel panel-right">
+      <div class="panel-head">
+        <span class="panel-icon">⚡</span>
+        <div class="panel-head-text">
+          <div class="panel-title">The Digital Twin Simulation</div>
+          <div class="panel-sub">Live · Responds to priorities · Updates in real time</div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="stat-card">
+          <div class="stat-n" id="fin-loss-big">—</div>
+          <div class="stat-label">Projected loss trajectory · priority-adjusted</div>
+          <div class="stat-body">The PDF prints one number — US$4.5B — baked at one weighting, forever. Move the sliders and watch this change. The twin makes the assumption visible and arguable.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-n" id="fin-cases-big">—</div>
+          <div class="stat-label">Modelled cases in need · receiving care</div>
+          <div class="stat-body">The PDF reports 71% case growth but fixes the care gap at 1-in-10. The twin lets you shift the workforce weight and see how that ratio moves across districts.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-n" id="fin-districts-big">—</div>
+          <div class="stat-label">Districts with critical workforce gap</div>
+          <div class="stat-body">The PDF footnotes 55% of posts unfilled nationally. The twin surfaces which of the 146 districts are most exposed — and how that changes as you reprioritise.</div>
+        </div>
       </div>
     </div>
 
-    <div class="fin-col fin-col-right">
-      <div class="fin-col-head">
-        <span class="fin-col-icon">⚡</span>
-        <div>
-          <div class="fin-col-title">The live simulation</div>
-          <div class="fin-col-sub">Dynamic · Updates in real time · Responds to priorities</div>
-        </div>
-      </div>
-      <div class="fin-live">
-        <div class="fin-live-label">Move the mental health weight slider →</div>
-        <div class="fin-live-demo">
-          <div class="fin-live-row">
-            <span class="fin-live-name">Mental health priority</span>
-            <input type="range" class="fin-slider" id="fin-mh" min="10" max="70" value="35" oninput="finUpdate()">
-            <span class="fin-live-val" id="fin-mh-val">35%</span>
-          </div>
-          <div class="fin-live-row">
-            <span class="fin-live-name">Mortality weight</span>
-            <input type="range" class="fin-slider" id="fin-mort" min="5" max="50" value="25" oninput="finUpdate()">
-            <span class="fin-live-val" id="fin-mort-val">25%</span>
-          </div>
-          <div class="fin-live-row">
-            <span class="fin-live-name">Workforce gap proxy</span>
-            <input type="range" class="fin-slider" id="fin-wf" min="5" max="50" value="25" oninput="finUpdate()">
-            <span class="fin-live-val" id="fin-wf-val">25%</span>
-          </div>
-          <div class="fin-live-row">
-            <span class="fin-live-name">Access / stockouts</span>
-            <input type="range" class="fin-slider" id="fin-so" min="5" max="40" value="15" oninput="finUpdate()">
-            <span class="fin-live-val" id="fin-so-val">15%</span>
-          </div>
-        </div>
-        <div class="fin-result" id="fin-result">
-          <div class="fin-result-row">
-            <span class="fin-result-label">At-risk districts</span>
-            <span class="fin-result-val" id="fin-districts" style="color:var(--red)">—</span>
-          </div>
-          <div class="fin-result-row">
-            <span class="fin-result-label">Projected loss trajectory</span>
-            <span class="fin-result-val" id="fin-loss" style="color:var(--red)">—</span>
-          </div>
-          <div class="fin-result-row">
-            <span class="fin-result-label">Priority-adjusted exposure</span>
-            <span class="fin-result-val" id="fin-exposure" style="color:var(--gold2)">—</span>
-          </div>
-          <div class="fin-note" id="fin-note">Adjust the sliders to see how reprioritising indicators shifts which districts are most at risk — and what the aggregate loss trajectory becomes.</div>
-        </div>
-      </div>
-      <div class="fin-caption">
-        The annual report gives you one set of weights, baked in by the authors.<br>
-        <strong>The twin gives you all possible weightings, live.</strong><br>
-        This is what turns a PDF into a planning instrument.
+  </div><!-- /duel -->
+
+  <!-- ════ SLIDER BAR — full width, controls twin only ════ -->
+  <div class="slider-bar">
+    <div class="slider-bar-head">
+      <span class="slider-bar-icon">⚡</span>
+      <div>
+        <div class="slider-bar-title">Adjust the twin's weights</div>
+        <div class="slider-bar-sub">These sliders control the Digital Twin Simulation above — the PDF panel is fixed by definition</div>
       </div>
     </div>
-  </div>
+    <div class="slider-grid">
+      <div class="slider-row">
+        <span class="slider-name">Mental health priority</span>
+        <input type="range" class="fin-slider" id="fin-mh" min="10" max="70" value="35" oninput="finUpdate()">
+        <span class="slider-val" id="fin-mh-val">—</span>
+      </div>
+      <div class="slider-row">
+        <span class="slider-name">Mortality weight</span>
+        <input type="range" class="fin-slider" id="fin-mort" min="5" max="50" value="25" oninput="finUpdate()">
+        <span class="slider-val" id="fin-mort-val">—</span>
+      </div>
+      <div class="slider-row">
+        <span class="slider-name">Workforce gap proxy</span>
+        <input type="range" class="fin-slider" id="fin-wf" min="5" max="50" value="25" oninput="finUpdate()">
+        <span class="slider-val" id="fin-wf-val">—</span>
+      </div>
+      <div class="slider-row">
+        <span class="slider-name">Access / stockouts</span>
+        <input type="range" class="fin-slider" id="fin-so" min="5" max="40" value="15" oninput="finUpdate()">
+        <span class="slider-val" id="fin-so-val">—</span>
+      </div>
+    </div>
+  </div><!-- /slider-bar -->
+
+  <!-- ════ VERDICT STRIP ════ -->
+  <div class="verdict-strip">
+    <div class="verdict-col">
+      <div class="verdict-eyebrow">PDF gives you</div>
+      <div class="verdict-num" style="color:var(--red)">1</div>
+      <div class="verdict-label">Fixed weighting. Baked in by the authors. Consulted once a year. No scenario. No question. No Monday morning action.</div>
+    </div>
+    <div class="verdict-divider">
+      <div class="vd-line"></div>
+      <div class="vd-label">vs</div>
+      <div class="vd-line"></div>
+    </div>
+    <div class="verdict-col">
+      <div class="verdict-eyebrow">Twin gives you</div>
+      <div class="verdict-num" style="color:var(--gold2)">∞ paths</div>
+      <div class="verdict-label" id="verdict-exposure">All possible weightings, live. The map recolours. The decision is ready before the meeting ends.</div>
+    </div>
+    <div class="scenario-note" id="verdict-note">
+      Adjust the sliders above to see how reprioritising indicators shifts which districts are most at risk — and what the aggregate loss trajectory becomes.
+    </div>
+  </div><!-- /verdict-strip -->
 
   <div class="pullquote">
     The data already exists. The workforce gaps are already counted.<br>
@@ -626,7 +578,6 @@ body{font-family:var(--body);background:var(--black);color:var(--white);line-hei
   <div class="slide-num">06 — Scalar · The decision · And who controls it</div>
   <h2>One answer.<br><em>Government holds the keys.</em></h2>
   <p class="lead">Every compression of the tensor — every colour on the map, every dropdown choice, every pipeline update — collapses to a single actionable number. And that number, and all the data behind it, belongs to Government.</p>
-
   <div class="scalar-box">
     <div class="scalar-top">
       <div class="s-eyebrow">Data Sovereignty · Uganda Data Protection &amp; Privacy Act 2019</div>
@@ -698,31 +649,52 @@ function ddUpdate(){
 
 // FINANCE BRIDGE
 function finUpdate(){
-  var mh=+document.getElementById('fin-mh').value;
-  var mort=+document.getElementById('fin-mort').value;
-  var wf=+document.getElementById('fin-wf').value;
-  var so=+document.getElementById('fin-so').value;
-  var T=mh+mort+wf+so;
-  var pMH=Math.round(mh/T*100);
-  document.getElementById('fin-mh-val').textContent=pMH+'%';
-  document.getElementById('fin-mort-val').textContent=Math.round(mort/T*100)+'%';
-  document.getElementById('fin-wf-val').textContent=Math.round(wf/T*100)+'%';
-  document.getElementById('fin-so-val').textContent=Math.round(so/T*100)+'%';
-  var mhDrive=pMH/35;
-  var atRisk=Math.round(14+(mhDrive-1)*8+(wf/25-1)*5);
-  var lossAdj=+(4.5*(0.7+0.3*mhDrive*(wf/25))).toFixed(1);
-  var exposure=pMH>40?'High — mental health dominant':pMH<25?'Distributed — balanced weights':'Moderate — mixed burden';
-  var expColor=pMH>40?'var(--red)':pMH<25?'var(--lgreen)':'var(--gold2)';
-  document.getElementById('fin-districts').textContent=Math.max(8,Math.min(40,atRisk))+' / 146 districts';
-  document.getElementById('fin-loss').textContent='US$'+lossAdj+'B by 2040';
-  document.getElementById('fin-exposure').textContent=exposure;
-  document.getElementById('fin-exposure').style.color=expColor;
-  var note=pMH>45
-    ?'Mental health is now the dominant weight. Northern and urban districts turn deepest red. The economic trajectory worsens fastest here — this is what the PDF cannot show you.'
-    :pMH<22
-    ?'With mental health de-prioritised, the workforce gap and access proxies surface. Different districts turn red. Same data — completely different direction of intervention.'
-    :'Balanced priorities. The map shows distributed burden. No single indicator dominates. This is the baseline the annual report assumes — but never questions.';
-  document.getElementById('fin-note').textContent=note;
+  var mh   = +document.getElementById('fin-mh').value;
+  var mort = +document.getElementById('fin-mort').value;
+  var wf   = +document.getElementById('fin-wf').value;
+  var so   = +document.getElementById('fin-so').value;
+  var T = mh + mort + wf + so;
+  var pMH   = Math.round(mh   / T * 100);
+  var pMort = Math.round(mort / T * 100);
+  var pWF   = Math.round(wf   / T * 100);
+  var pSO   = Math.round(so   / T * 100);
+
+  document.getElementById('fin-mh-val').textContent   = pMH   + '%';
+  document.getElementById('fin-mort-val').textContent = pMort + '%';
+  document.getElementById('fin-wf-val').textContent   = pWF   + '%';
+  document.getElementById('fin-so-val').textContent   = pSO   + '%';
+
+  var mhDrive = pMH / 35;
+  var wfDrive = wf  / 25;
+
+  // Row 1 — mirrors US$4.5B
+  var lossAdj = (4.5 * (0.7 + 0.3 * mhDrive * wfDrive)).toFixed(1);
+  document.getElementById('fin-loss-big').textContent = 'US$' + lossAdj + 'B';
+
+  // Row 2 — mirrors 71% case rise: % receiving care
+  var careRate = Math.round(10 + (pMort / 25) * 6 + (pMH / 35) * 4);
+  careRate = Math.max(8, Math.min(28, careRate));
+  document.getElementById('fin-cases-big').textContent = careRate + '%';
+
+  // Row 3 — mirrors 55% posts unfilled: districts at critical gap
+  var atRisk = Math.round(14 + (mhDrive - 1) * 8 + (wfDrive - 1) * 5);
+  atRisk = Math.max(8, Math.min(40, atRisk));
+  document.getElementById('fin-districts-big').textContent = atRisk + ' / 146';
+
+  // Verdict exposure text
+  var expText = (pMH > 45)
+    ? 'Mental health dominant. Northern and urban districts deepest red. Economic trajectory worsens fastest here — <strong>this is what the PDF cannot show you.</strong>'
+    : (pMH < 22)
+    ? 'Workforce gap and access proxies surface. Different districts turn red. Same data — <strong>completely different direction of intervention.</strong>'
+    : 'Balanced priorities. Distributed burden. No single indicator dominates. <strong>This is the baseline the annual report assumes — but never questions.</strong>';
+  document.getElementById('verdict-exposure').innerHTML = expText;
+
+  var noteText = (pMH > 45)
+    ? 'With mental health above 45% of the composite weight, the economic loss trajectory accelerates. <strong>The red districts are the Monday-morning action list.</strong>'
+    : (pMH < 22)
+    ? 'With mental health de-prioritised, structural gaps surface. Workforce and access become the primary signal. Different ministerial desks. Different budget lines. Same 146 districts — different map.'
+    : 'Balanced weights produce the baseline scenario the annual PDF encodes, silently, by never surfacing its own assumptions. <strong>The twin makes the assumptions visible — and arguable.</strong>';
+  document.getElementById('verdict-note').innerHTML = noteText;
 }
 finUpdate();
 
