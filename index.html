@@ -3,709 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uganda Digital Twin · NPA Board · Ukubona LLC</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital@0;1&family=Source+Code+Pro:wght@400;600&display=swap');
+<title>Ukubona LLC · NPA Digital Twin</title>
+<meta name="description" content="Uganda Mental Health Digital Twin — NPA Board Briefing · SUPRE 2025 · Ukubona LLC">
+<meta property="og:title" content="Ukubona LLC · NPA Digital Twin">
+<meta property="og:description" content="Uganda Mental Health Digital Twin — NPA Board Briefing · SUPRE 2025">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="icon" href="https://abikesa.github.io/favicon/assets/favicon-light.ico" />
+    <link rel="icon" href="https://abikesa.github.io/favicon/assets/favicon-dark.ico"
+          media="(prefers-color-scheme: dark)" />
 
-:root {
-  --black:  #080808;
-  --off:    #111210;
-  --dark:   #1a1c18;
-  --mid:    #2e3028;
-  --line:   #3a3d32;
-  --mute:   #6b7060;
-  --pale:   #b8bfaa;
-  --white:  #f5f3ee;
-  --gold:   #c9a84c;
-  --gold2:  #e8c96b;
-  --red:    #c93b2a;
-  --orange: #d4622a;
-  --yellow: #c9a22a;
-  --lgreen: #5a8c3a;
-  --green:  #2a6b3a;
-  --teal:   #2a6b6b;
-  --blue:   #2a4a8c;
-  --serif: 'Playfair Display', Georgia, serif;
-  --body:  'Libre Baskerville', Georgia, serif;
-  --mono:  'Source Code Pro', monospace;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--body);background:var(--black);color:var(--white);line-height:1.65;overflow-x:hidden;}
+    <!-- Logo preloads -->
+    <link rel="preload" href="https://abikesa.github.io/logos/assets/ukubona-light.png" as="image" />
+    <link rel="preload" href="https://abikesa.github.io/logos/assets/ukubona-dark.png" as="image" />
 
-/* SLIDES */
-.slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:5vw 8vw;position:relative;border-bottom:1px solid var(--line);}
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* TITLE */
-.slide-title{background:var(--black);align-items:flex-start;}
-.slide-title::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 80% 50%,rgba(201,168,76,.06) 0%,transparent 70%),repeating-linear-gradient(90deg,transparent 79px,rgba(255,255,255,.018) 79px,rgba(255,255,255,.018) 80px),repeating-linear-gradient(0deg,transparent 79px,rgba(255,255,255,.018) 79px,rgba(255,255,255,.018) 80px);pointer-events:none;}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:.8;}
-.slide-title h1{font-family:var(--serif);font-size:clamp(3rem,8vw,6.5rem);font-weight:400;line-height:1;color:var(--white);margin-bottom:.5rem;position:relative;}
-.slide-title h1 em{font-style:italic;color:var(--gold2);}
-.tagline{font-family:var(--body);font-size:clamp(1rem,2.5vw,1.25rem);font-style:italic;color:var(--pale);margin-bottom:3rem;max-width:48ch;line-height:1.6;}
-.title-meta{display:flex;gap:2rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1.5rem;margin-top:1rem;}
-.meta-item{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);}
-.meta-item span{color:var(--pale);display:block;margin-top:3px;font-size:12px;}
+  :root {
+    --ink:    #0f0e0d;
+    --ink2:   #3a3630;
+    --ink3:   #7a7268;
+    --ink4:   #b0a898;
+    --paper:  #faf8f4;
+    --paper2: #f0ece4;
+    --border: #d8d0c0;
+    --gold:   #b8860b;
+    --gold2:  #d4a017;
+    --blue:   #1a3a6b;
+    --bar-h:  48px;
+  }
 
-/* PENTAD STRIP */
-.pstrip{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:2.5rem;}
-.ps-step{flex:1;padding:.75rem .5rem;text-align:center;border-right:1px solid var(--line);background:var(--dark);font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute);}
-.ps-step:last-child{border-right:none;}
-.ps-step.active{background:var(--mid);color:var(--gold2);box-shadow:inset 0 -2px 0 var(--gold);}
-.ps-step strong{display:block;font-size:9px;color:var(--mute);margin-top:2px;font-weight:400;}
-.ps-step.active strong{color:var(--gold);}
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    background: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+  }
 
-/* HEADINGS */
-.slide-num{font-family:var(--mono);font-size:11px;letter-spacing:.15em;color:var(--mute);margin-bottom:.75rem;}
-.slide h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--white);margin-bottom:.75rem;}
-.slide h2 em{font-style:italic;color:var(--gold2);}
-.lead{font-size:clamp(.95rem,1.8vw,1.1rem);color:var(--pale);max-width:62ch;margin-bottom:2rem;line-height:1.8;font-style:italic;}
+  /* ── TOP BAR ── */
+  #topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--bar-h);
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
 
-/* LIVE BADGE */
-.live-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--lgreen);margin-bottom:1rem;}
-.live-dot{width:7px;height:7px;border-radius:50%;background:var(--lgreen);animation:pulse 1.6s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}
+  .bar-left {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
 
-/* TWIN EMBED */
-.twin-wrap{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--off);}
-.twin-bar{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px solid var(--line);background:var(--dark);}
-.twin-dots{display:flex;gap:6px;}
-.twin-dots span{width:10px;height:10px;border-radius:50%;}
-.twin-dots span:nth-child(1){background:#c04040;}
-.twin-dots span:nth-child(2){background:#c09040;}
-.twin-dots span:nth-child(3){background:#40a040;}
-.twin-url{font-family:var(--mono);font-size:11px;color:var(--mute);}
-.twin-badge{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);padding:3px 8px;border-radius:3px;}
-.twin-iframe{width:100%;height:500px;border:none;display:block;}
-.twin-foot{padding:9px 16px;background:var(--dark);border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;}
-.twin-foot strong{color:var(--pale);}
+  .bar-brand {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--gold2);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
 
-/* ROYGBIV GRID */
-.rg-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:1.5rem 0;}
-@media(max-width:680px){.rg-grid{grid-template-columns:repeat(4,1fr);}}
-.rg-cell{border:1px solid var(--line);border-radius:6px;background:var(--dark);padding:1rem .5rem;text-align:center;transition:transform .15s;}
-.rg-cell:hover{transform:translateY(-3px);}
-.rg-swatch{width:28px;height:28px;border-radius:50%;margin:0 auto 8px;}
-.rg-label{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--mute);margin-bottom:4px;}
-.rg-val{font-family:var(--mono);font-size:10px;color:var(--pale);margin-bottom:3px;}
-.rg-meaning{font-size:11px;color:var(--mute);font-style:italic;line-height:1.4;}
+  .bar-sep {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.18);
+    letter-spacing: 0.05em;
+  }
 
-/* DROPDOWN DEMO */
-.dd-wrap{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
-.dd-bar{background:var(--dark);padding:.75rem 1.25rem;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);}
-.dd-body{padding:1.25rem;background:var(--off);}
-.dd-row{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap;}
-.dd-label{font-size:13px;color:var(--pale);width:220px;flex-shrink:0;}
-.dd-select{font-family:var(--mono);font-size:12px;background:var(--dark);color:var(--gold2);border:1px solid var(--gold);border-radius:4px;padding:6px 28px 6px 12px;cursor:pointer;outline:none;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23c9a84c'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;min-width:240px;}
-.dd-result{flex:1;font-family:var(--mono);font-size:11px;color:var(--mute);font-style:italic;}
-.dd-result span{color:var(--gold2);}
-.dd-note{font-size:12px;color:var(--mute);font-style:italic;border-top:1px solid var(--line);padding-top:1rem;line-height:1.7;}
-.dd-note strong{color:var(--pale);font-style:normal;}
+  .bar-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.38);
+    white-space: nowrap;
+  }
 
-/* API PIPELINE */
-.api-diag{margin:1.5rem 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-.api-diag-head{background:var(--dark);padding:.75rem 1.5rem;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);display:flex;justify-content:space-between;align-items:center;}
-.api-diag-head span{color:var(--gold);}
-.api-nodes{display:flex;align-items:center;padding:2rem 1.5rem;background:var(--off);flex-wrap:wrap;justify-content:center;gap:0;}
-.api-node{display:flex;flex-direction:column;align-items:center;min-width:100px;}
-.api-node-box{border:1px solid var(--line);border-radius:8px;background:var(--dark);padding:.85rem 1rem;text-align:center;width:100%;transition:border-color .2s,background .2s;}
-.api-node-box:hover{background:var(--mid);border-color:var(--gold);}
-.api-node-sym{font-family:var(--serif);font-size:1.3rem;color:var(--mute);display:block;margin-bottom:4px;}
-.api-node-name{font-family:var(--mono);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--pale);display:block;}
-.api-node-sub{font-size:9px;color:var(--mute);display:block;margin-top:2px;font-style:italic;}
-.api-arrow{display:flex;align-items:center;padding:0 6px;color:var(--mute);font-size:16px;flex-shrink:0;margin-bottom:8px;}
-.api-feedback{width:100%;display:flex;align-items:center;padding:.75rem 1.5rem 1.1rem;background:var(--off);border-top:1px solid var(--line);gap:0;justify-content:center;}
-.fb-node{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute);white-space:nowrap;padding:4px 8px;}
-.fb-seg{flex:1;display:flex;align-items:center;position:relative;min-width:20px;height:14px;}
-.fb-seg::after{content:'';position:absolute;left:0;right:0;top:50%;border-top:1px dashed var(--mute);opacity:.3;}
-.fb-head{color:var(--mute);font-size:12px;flex-shrink:0;opacity:.4;}
-.api-endpoint{display:flex;flex-direction:column;gap:8px;background:var(--dark);border:1px solid var(--line);border-radius:8px;padding:1rem 1.25rem;margin:1.25rem 0;}
-.ep-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-.ep-method{font-family:var(--mono);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;flex-shrink:0;}
-.ep-get{background:rgba(42,107,58,.3);color:#6ecf8b;border:1px solid rgba(42,107,58,.5);}
-.ep-post{background:rgba(42,74,140,.3);color:#8ba8e8;border:1px solid rgba(42,74,140,.5);}
-.ep-path{font-family:var(--mono);font-size:11px;color:var(--gold2);flex-shrink:0;}
-.ep-desc{font-size:12px;color:var(--mute);font-style:italic;}
+  .bar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-/* SCALAR */
-.scalar-box{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:1.5rem 0;}
-.scalar-top{background:var(--dark);padding:1.5rem 2rem;border-bottom:1px solid var(--line);}
-.s-eyebrow{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin-bottom:.75rem;}
-.s-headline{font-family:var(--serif);font-size:clamp(1.3rem,3vw,2rem);font-weight:400;color:var(--white);line-height:1.25;}
-.s-headline em{font-style:italic;color:var(--gold2);}
-.scalar-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
-@media(max-width:560px){.scalar-grid{grid-template-columns:1fr;}}
-.sc-cell{background:var(--off);padding:1.25rem 1.5rem;}
-.sc-label{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);margin-bottom:6px;}
-.sc-body{font-size:13px;color:var(--pale);line-height:1.7;font-style:italic;}
-.sc-body strong{color:var(--white);font-style:normal;}
-.scalar-oneliner{background:var(--mid);padding:1.25rem 2rem;border-top:1px solid var(--line);font-family:var(--serif);font-size:clamp(1rem,2.5vw,1.4rem);font-style:italic;color:var(--white);line-height:1.5;text-align:center;}
-.scalar-oneliner em{color:var(--gold2);}
+  .bar-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2ecc71;
+    flex-shrink: 0;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
 
-/* PULLQUOTE */
-.pullquote{border-left:2px solid var(--gold);padding:.5rem 1.5rem;margin:1.5rem 0;font-family:var(--serif);font-size:clamp(1rem,2.2vw,1.35rem);font-style:italic;color:var(--white);line-height:1.55;}
-.pullquote cite{display:block;font-family:var(--mono);font-size:10px;font-style:normal;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);margin-top:.75rem;}
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.35; }
+  }
 
-/* ROADMAP */
-.roadmap-toggle{display:flex;align-items:center;gap:1.25rem;padding:1.1rem 1.5rem;border:1px solid var(--line);border-radius:8px;background:var(--dark);cursor:pointer;margin:1.5rem 0 0;transition:background .2s,border-color .2s;}
-.roadmap-toggle:hover{background:var(--mid);border-color:var(--gold);}
-.rm-plus{font-family:var(--serif);font-size:1.8rem;color:var(--gold);line-height:1;width:28px;flex-shrink:0;text-align:center;transition:transform .3s;}
-.rm-plus.open{transform:rotate(45deg);}
-.rm-toggle-text{display:flex;flex-direction:column;gap:2px;}
-.rm-label{font-family:var(--mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);}
-.rm-hint{font-size:12px;color:var(--mute);font-style:italic;}
-.roadmap-panel{display:none;border:1px solid var(--line);border-top:none;border-radius:0 0 8px 8px;}
-.roadmap-panel.open{display:block;}
-.roadmap-inner{padding:2rem 2.5rem;background:var(--off);}
-.rm-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;opacity:.7;}
-.rm-headline{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.8rem);font-weight:400;line-height:1.2;color:var(--white);margin-bottom:1rem;}
-.rm-headline em{font-style:italic;color:var(--gold2);}
-.rm-body{font-size:13px;color:var(--pale);line-height:1.8;font-style:italic;max-width:64ch;margin-bottom:2rem;}
-.rm-timeline{border-left:1px solid var(--line);margin-left:10px;margin-bottom:2rem;}
-.rm-stage{display:flex;align-items:flex-start;gap:1.25rem;padding:1rem 0 1rem 1.5rem;position:relative;border-bottom:1px solid var(--line);}
-.rm-stage:last-child{border-bottom:none;}
-.rm-stage-dot{width:13px;height:13px;border-radius:50%;position:absolute;left:-7px;top:18px;box-sizing:border-box;box-shadow:0 0 0 3px var(--off);flex-shrink:0;}
-.rm-stage-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:3px;}
-.rm-stage-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:3px;}
-.rm-stage-body{font-size:12px;color:var(--pale);line-height:1.65;font-style:italic;}
-.rm-invariant{background:var(--dark);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:1rem 1.5rem;}
-.rm-inv-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:5px;}
-.rm-inv-body{font-size:12px;color:var(--pale);line-height:1.7;font-style:italic;}
-.rm-inv-body strong{color:var(--white);font-style:normal;}
+  .bar-status {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
 
-/* ── SLIDE 05 · DUEL PANELS ── */
-.duel{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px 12px 0 0;overflow:hidden;margin-bottom:0;}
-@media(max-width:800px){.duel{grid-template-columns:1fr;}}
-.panel{display:flex;flex-direction:column;}
-.panel-left{background:var(--dark);border-right:1px solid var(--line);}
-.panel-right{background:var(--off);}
-.panel-head{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.75rem;border-bottom:2px solid var(--line);}
-.panel-left .panel-head{border-bottom-color:var(--red);}
-.panel-right .panel-head{border-bottom-color:var(--gold);}
-.panel-icon{font-size:1.6rem;line-height:1;flex-shrink:0;}
-.panel-title{font-family:var(--mono);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--white);margin-bottom:2px;}
-.panel-sub{font-size:11px;color:var(--mute);font-style:italic;}
-.panel-body{padding:1.5rem 1.75rem;display:flex;flex-direction:column;gap:1.25rem;flex:1;}
-.stat-card{background:rgba(0,0,0,.2);border-radius:8px;padding:1.1rem 1.25rem;border-left:3px solid var(--line);}
-.panel-left .stat-card{border-left-color:var(--red);}
-.panel-right .stat-card{border-left-color:var(--gold);}
-.stat-n{font-family:var(--serif);font-size:2.6rem;line-height:1;margin-bottom:.35rem;}
-.panel-left .stat-n{color:var(--red);}
-.panel-right .stat-n{color:var(--gold2);}
-.stat-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--mute);margin-bottom:.5rem;}
-.stat-body{font-size:13px;color:var(--pale);line-height:1.7;font-style:italic;}
+  .bar-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    transition: all 0.15s;
+  }
+  .bar-link:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.07);
+  }
 
-/* ── SLIDER BAR ── */
-.slider-bar{border:1px solid var(--line);border-top:none;background:var(--mid);padding:1.5rem 2rem;display:flex;flex-direction:column;gap:1.25rem;}
-.slider-bar-head{display:flex;align-items:center;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--line);}
-.slider-bar-icon{font-size:1.2rem;line-height:1;flex-shrink:0;opacity:.7;}
-.slider-bar-title{font-family:var(--mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin-bottom:2px;}
-.slider-bar-sub{font-size:11px;color:var(--mute);font-style:italic;}
-.slider-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem 3rem;}
-@media(max-width:800px){.slider-grid{grid-template-columns:1fr;}}
-.slider-row{display:flex;align-items:center;gap:.75rem;}
-.slider-name{font-size:13px;color:var(--pale);width:180px;flex-shrink:0;line-height:1.3;}
-.fin-slider{flex:1;height:4px;appearance:none;-webkit-appearance:none;background:var(--line);border-radius:2px;outline:none;cursor:pointer;}
-.fin-slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 3px rgba(201,168,76,.25);transition:transform .15s,box-shadow .15s;}
-.fin-slider::-webkit-slider-thumb:hover{transform:scale(1.2);box-shadow:0 0 0 5px rgba(201,168,76,.2);}
-.fin-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;}
-.slider-val{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--gold2);width:42px;text-align:right;flex-shrink:0;}
+  /* ── LOADER ── */
+  #loader {
+    position: fixed;
+    top: var(--bar-h); left: 0; right: 0; bottom: 0;
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 50;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  #loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 
-/* ── VERDICT STRIP ── */
-.verdict-strip{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;background:var(--mid);padding:2rem 2.5rem;display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:start;}
-@media(max-width:800px){.verdict-strip{grid-template-columns:1fr;}}
-.verdict-col{}
-.verdict-eyebrow{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--mute);margin-bottom:.6rem;}
-.verdict-num{font-family:var(--serif);font-size:2.8rem;line-height:1;margin-bottom:.4rem;}
-.verdict-label{font-size:13px;color:var(--pale);font-style:italic;line-height:1.6;}
-.verdict-divider{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding-top:.25rem;}
-.vd-line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:.4;}
-.vd-label{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);text-align:center;line-height:1.7;opacity:.7;white-space:nowrap;}
-.scenario-note{grid-column:1 / -1;border-top:1px solid var(--line);padding-top:1.25rem;font-size:13px;color:var(--mute);font-style:italic;line-height:1.8;text-align:center;max-width:72ch;margin:0 auto;}
-.scenario-note strong{color:var(--pale);font-style:normal;}
+  .loader-wordmark {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .loader-wordmark em {
+    font-style: italic;
+    color: var(--gold2);
+  }
 
-/* NAV */
-.nav-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:100;}
-.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;border:1px solid var(--mute);transition:all .2s;}
-.nav-dot.active{background:var(--gold);border-color:var(--gold);transform:scale(1.3);}
-@media(max-width:600px){.nav-dots{display:none;}}
-.slide-ind{position:absolute;bottom:1.5rem;right:2rem;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--mute);}
+  .loader-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink4);
+    margin-top: -1.4rem;
+  }
 
-/* FOOTER */
-.site-footer{padding:1.5rem 8vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.footer-brand{font-family:var(--serif);font-size:1rem;color:var(--gold);font-style:italic;}
-.footer-note{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--mute);text-transform:uppercase;}
+  /* animated progress track */
+  .loader-track {
+    width: 220px;
+    height: 2px;
+    background: var(--border);
+    border-radius: 1px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+  .loader-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold2));
+    border-radius: 1px;
+    animation: load 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  @keyframes load {
+    0%   { width: 0%; }
+    40%  { width: 65%; }
+    80%  { width: 88%; }
+    100% { width: 100%; }
+  }
+
+  .loader-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink4);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .loader-note-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold2);
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* ── IFRAME ── */
+  #frame-wrap {
+    position: fixed;
+    top: var(--bar-h); left: 0; right: 0; bottom: 0;
+  }
+
+  #app-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    background: var(--paper);
+  }
+
+  /* ── RESPONSIVE: hide some bar items on small screens ── */
+  @media (max-width: 540px) {
+    .bar-status, .bar-sep { display: none; }
+    .bar-tag { font-size: 9px; letter-spacing: 0.08em; }
+  }
 </style>
 </head>
 <body>
 
-<nav class="nav-dots" id="navDots">
-  <div class="nav-dot active" onclick="goTo(0)" title="Title"></div>
-  <div class="nav-dot" onclick="goTo(1)" title="① Tensor · The Map"></div>
-  <div class="nav-dot" onclick="goTo(2)" title="② Matrix · Colour Key"></div>
-  <div class="nav-dot" onclick="goTo(3)" title="③ Vector · Dropdown"></div>
-  <div class="nav-dot" onclick="goTo(4)" title="④ Pipeline · API"></div>
-  <div class="nav-dot" onclick="goTo(5)" title="Cost of the PDF"></div>
-  <div class="nav-dot" onclick="goTo(6)" title="⑤ Scalar · Sovereignty"></div>
-</nav>
+<!-- TOP BAR -->
+<div id="topbar">
+  <div class="bar-left">
+    <a class="bar-brand" href="https://ukb-0-method-sib-dt-v19.onrender.com/" target="_blank" rel="noopener">Ukubona</a>
+    <span class="bar-sep">·</span>
+    <span class="bar-tag">NPA Digital Twin · SUPRE 2025</span>
+  </div>
+  <div class="bar-right">
+    <div class="bar-dot" id="status-dot"></div>
+    <span class="bar-status" id="status-text">Connecting…</span>
+    <a class="bar-link" href="https://ukb-0-method-sib-dt-v19.onrender.com/" target="_blank" rel="noopener">Open ↗</a>
+  </div>
+</div>
 
-<!-- ════════════════════════════ TITLE ════════════════════════════ -->
-<section class="slide slide-title" id="s0">
-  <div class="eyebrow">National Planning Authority · Board Briefing · Ukubona LLC</div>
-  <h1>Uganda,<br><em>seen whole.</em></h1>
-  <p class="tagline">A living digital twin that turns 146 district-level data streams into a single, readable picture — and keeps it current.</p>
-  <div class="title-meta">
-    <div class="meta-item">Presented by<span>Vincent Mangeni · Chief ICT</span></div>
-    <div class="meta-item">System by<span>Ukubona LLC</span></div>
-    <div class="meta-item">Districts<span>146 · All Uganda</span></div>
-    <div class="meta-item">Source<span>SUPRE 2025 · NPA</span></div>
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div>
+    <div class="loader-wordmark">Uku<em>bona</em></div>
+    <div class="loader-sub">National Planning Authority · Uganda</div>
   </div>
-  <div class="slide-ind">00 / 05</div>
-</section>
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+  <div class="loader-note">
+    <div class="loader-note-dot"></div>
+    Loading district digital twin
+  </div>
+</div>
 
-<!-- ════════════════════════════ SLIDE 1 · TENSOR ════════════════════════════ -->
-<section class="slide" id="s1">
-  <div class="pstrip">
-    <div class="ps-step active">① Tensor<strong>The Map</strong></div>
-    <div class="ps-step">② Matrix<strong>Colour Key</strong></div>
-    <div class="ps-step">③ Vector<strong>Dropdown</strong></div>
-    <div class="ps-step">④ Pipeline<strong>The API</strong></div>
-    <div class="ps-step">⑤ Scalar<strong>Sovereignty</strong></div>
-  </div>
-  <div class="slide-num">01 — Tensor · 146 districts · longitude + latitude</div>
-  <h2>Every district.<br><em>One picture.</em></h2>
-  <p class="lead">The map holds the full complexity of Uganda without simplifying it. Each of the 146 districts is a coordinate — longitude, latitude. The colour is the third dimension: how is this district performing, right now, on the question the board chose?</p>
-  <div class="live-badge"><span class="live-dot"></span>Live system · updates as data arrives</div>
-  <div class="twin-wrap">
-    <div class="twin-bar">
-      <div class="twin-dots"><span></span><span></span><span></span></div>
-      <div class="twin-url">ukubona-llc.github.io/npa-demo</div>
-      <div class="twin-badge">Uganda Digital Twin · 146 Districts</div>
-    </div>
-    <iframe class="twin-iframe" src="https://ukubona-llc.github.io/npa-demo/" title="Uganda Digital Twin" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
-    <div class="twin-foot">
-      <span>146 districts · all regions · all sectors</span>
-      <span><strong>Try the dropdown.</strong> The map recolours instantly.</span>
-    </div>
-  </div>
-  <div class="slide-ind">01 / 05</div>
-</section>
-
-<!-- ════════════════════════════ SLIDE 2 · MATRIX ════════════════════════════ -->
-<section class="slide" id="s2">
-  <div class="pstrip">
-    <div class="ps-step">① Tensor<strong>The Map</strong></div>
-    <div class="ps-step active">② Matrix<strong>Colour Key</strong></div>
-    <div class="ps-step">③ Vector<strong>Dropdown</strong></div>
-    <div class="ps-step">④ Pipeline<strong>The API</strong></div>
-    <div class="ps-step">⑤ Scalar<strong>Sovereignty</strong></div>
-  </div>
-  <div class="slide-num">02 — Matrix · The compressor · NPA's new lingua franca</div>
-  <h2>One colour.<br><em>One answer.</em></h2>
-  <p class="lead">The ROYGBIV gradient is Uganda's new shared language for district performance — offered by Ukubona LLC as NPA's standard visual vocabulary. No statistics required. No training required. Red means act now. Blue means replicate this.</p>
-  <div class="rg-grid">
-    <div class="rg-cell"><div class="rg-swatch" style="background:#c93b2a"></div><div class="rg-label">Red</div><div class="rg-val">0.75 – 1.0</div><div class="rg-meaning">Critical — act now</div></div>
-    <div class="rg-cell"><div class="rg-swatch" style="background:#d4622a"></div><div class="rg-label">Orange</div><div class="rg-val">0.60 – 0.75</div><div class="rg-meaning">Urgent — monitor</div></div>
-    <div class="rg-cell"><div class="rg-swatch" style="background:#c9a22a"></div><div class="rg-label">Yellow</div><div class="rg-val">0.45 – 0.60</div><div class="rg-meaning">Elevated — watch</div></div>
-    <div class="rg-cell"><div class="rg-swatch" style="background:#8ab83a"></div><div class="rg-label">Lime</div><div class="rg-val">0.30 – 0.45</div><div class="rg-meaning">Improving</div></div>
-    <div class="rg-cell"><div class="rg-swatch" style="background:#2a6b3a"></div><div class="rg-label">Green</div><div class="rg-val">0.18 – 0.30</div><div class="rg-meaning">Stable — sustain</div></div>
-    <div class="rg-cell"><div class="rg-swatch" style="background:#2a6b6b"></div><div class="rg-label">Teal</div><div class="rg-val">0.08 – 0.18</div><div class="rg-meaning">Good — replicate</div></div>
-    <div class="rg-cell"><div class="rg-swatch" style="background:#2a4a8c"></div><div class="rg-label">Blue</div><div class="rg-val">0.00 – 0.08</div><div class="rg-meaning">Best — the model</div></div>
-  </div>
-  <div class="pullquote">
-    Red is where Uganda is losing.<br>
-    Blue is where Uganda is winning.<br>
-    <em>The gradient between them is the policy priority queue.</em>
-    <cite>— The compressor · Ukubona LLC</cite>
-  </div>
-  <div class="slide-ind">02 / 05</div>
-</section>
-
-<!-- ════════════════════════════ SLIDE 3 · VECTOR ════════════════════════════ -->
-<section class="slide" id="s3">
-  <div class="pstrip">
-    <div class="ps-step">① Tensor<strong>The Map</strong></div>
-    <div class="ps-step">② Matrix<strong>Colour Key</strong></div>
-    <div class="ps-step active">③ Vector<strong>Dropdown</strong></div>
-    <div class="ps-step">④ Pipeline<strong>The API</strong></div>
-    <div class="ps-step">⑤ Scalar<strong>Sovereignty</strong></div>
-  </div>
-  <div class="slide-num">03 — Vector · The policymaker sets the direction</div>
-  <h2>Change the question.<br><em>The map answers.</em></h2>
-  <p class="lead">The dropdown is the vector: it sets the direction of the board's gaze across all 146 districts. Every new national priority — mental health today, teenage pregnancy tomorrow, climate stress next year — is simply a new item in the menu. The engine does not change.</p>
-  <div class="dd-wrap">
-    <div class="dd-bar">Live demo — select an indicator</div>
-    <div class="dd-body">
-      <div class="dd-row">
-        <div class="dd-label">What is the board asking today?</div>
-        <select class="dd-select" id="ddSel" onchange="ddUpdate()">
-          <option value="mh">Mental health burden</option>
-          <option value="tp">Teenage pregnancy rate</option>
-          <option value="wf">Workforce gap · health posts</option>
-          <option value="yu">Youth unemployment</option>
-          <option value="ha">Health facility access</option>
-          <option value="ag">Agricultural yield stress</option>
-          <option value="cl">Climate vulnerability</option>
-        </select>
-        <div class="dd-result" id="ddResult"><span>Viewing: Mental health burden</span> · Map recolours instantly</div>
-      </div>
-      <div class="dd-note" id="ddNote"><strong>Mental health burden:</strong> 24.2% adult prevalence nationally. Kampala, Arua, Gulu show highest district scores. Fewer than 1 in 10 people in need receive care. The red districts are the Monday-morning action list.</div>
-    </div>
-  </div>
-  <div class="pullquote">
-    The dropdown gets longer every year.<br>
-    The engine does not change.<br>
-    <em>That is the 50-year roadmap — one menu item at a time.</em>
-  </div>
-  <div class="roadmap-toggle" onclick="rmTog()" id="rmBtn">
-    <span class="rm-plus" id="rmIcon">+</span>
-    <div class="rm-toggle-text">
-      <span class="rm-label">The 50-year roadmap</span>
-      <span class="rm-hint">Every new indicator is just a new dropdown item. The engine doesn't change.</span>
-    </div>
-  </div>
-  <div class="roadmap-panel" id="rmPanel">
-    <div class="roadmap-inner">
-      <div class="rm-eyebrow">NPA · Long Horizon · Ukubona LLC</div>
-      <h3 class="rm-headline">The tensor keeps expanding.<br><em>The scalar stays readable.</em></h3>
-      <p class="rm-body">Every new national priority is simply a new item in the dropdown. The engine does not change. The map does not change. What changes is the depth of what Uganda can see about itself.</p>
-      <div class="rm-timeline">
-        <div class="rm-stage"><div class="rm-stage-dot" style="background:var(--red)"></div><div><div class="rm-stage-label">Now — 2026</div><div class="rm-stage-title">Uganda · Health &amp; Social Indicators</div><div class="rm-stage-body">146 districts. Mental health, teenage pregnancy, workforce gaps. The twin is live.</div></div></div>
-        <div class="rm-stage"><div class="rm-stage-dot" style="background:var(--orange)"></div><div><div class="rm-stage-label">2026 – 2028</div><div class="rm-stage-title">Every Ministry · Every Kingdom</div><div class="rm-stage-body">Education, agriculture, revenue, Busoga Situation Room. Same engine, recoordinated.</div></div></div>
-        <div class="rm-stage"><div class="rm-stage-dot" style="background:var(--yellow)"></div><div><div class="rm-stage-label">2028 – 2035</div><div class="rm-stage-title">Sub-county · Facility Level</div><div class="rm-stage-body">Data granularity improves. The coordinate frame tightens. Policy becomes surgical.</div></div></div>
-        <div class="rm-stage"><div class="rm-stage-dot" style="background:var(--lgreen)"></div><div><div class="rm-stage-label">2035 – 2040</div><div class="rm-stage-title">Ten-Fold Growth Strategy · Live</div><div class="rm-stage-body">NDP IV targets visible daily. The scalar is a number every minister can see in real time.</div></div></div>
-        <div class="rm-stage"><div class="rm-stage-dot" style="background:var(--blue)"></div><div><div class="rm-stage-label">2040 – 2075</div><div class="rm-stage-title">East Africa · The Continent</div><div class="rm-stage-body">Uganda is the proof of concept. NPA becomes the continental model.</div></div></div>
-      </div>
-      <div class="rm-invariant">
-        <div class="rm-inv-label">The invariant</div>
-        <div class="rm-inv-body">The dropdown gets longer. The engine stays the same. <strong>Complexity lives in the pipeline. Clarity lives on the screen.</strong></div>
-      </div>
-    </div>
-  </div>
-  <div class="slide-ind">03 / 05</div>
-</section>
-
-<!-- ════════════════════════════ SLIDE 4 · PIPELINE ════════════════════════════ -->
-<section class="slide" id="s4">
-  <div class="pstrip">
-    <div class="ps-step">① Tensor<strong>The Map</strong></div>
-    <div class="ps-step">② Matrix<strong>Colour Key</strong></div>
-    <div class="ps-step">③ Vector<strong>Dropdown</strong></div>
-    <div class="ps-step active">④ Pipeline<strong>The API</strong></div>
-    <div class="ps-step">⑤ Scalar<strong>Sovereignty</strong></div>
-  </div>
-  <div class="slide-num">04 — Pipeline · How data moves · District → Decision</div>
-  <h2>No reports.<br><em>No waiting.</em></h2>
-  <p class="lead">The pipeline is what separates a digital twin from a static dashboard. District officers submit through a simple form with a token. The engine updates. The map recolours. The decision is available before the meeting ends.</p>
-  <div class="api-diag">
-    <div class="api-diag-head">Data flow — five nodes, no latency<span>146 districts · live</span></div>
-    <div class="api-nodes">
-      <div class="api-node"><div class="api-node-box"><span class="api-node-sym">⌖</span><span class="api-node-name">District</span><span class="api-node-sub">Officer submits</span></div></div>
-      <div class="api-arrow">→</div>
-      <div class="api-node"><div class="api-node-box"><span class="api-node-sym">⊕</span><span class="api-node-name">NPA</span><span class="api-node-sub">Policy frame</span></div></div>
-      <div class="api-arrow">→</div>
-      <div class="api-node"><div class="api-node-box"><span class="api-node-sym" style="color:var(--gold)">◎</span><span class="api-node-name" style="color:var(--gold2)">Ukubona</span><span class="api-node-sub">Engine · computes</span></div></div>
-      <div class="api-arrow">→</div>
-      <div class="api-node"><div class="api-node-box"><span class="api-node-sym">▲</span><span class="api-node-name">Map</span><span class="api-node-sub">Recolours live</span></div></div>
-      <div class="api-arrow">→</div>
-      <div class="api-node"><div class="api-node-box"><span class="api-node-sym">1</span><span class="api-node-name">Decision</span><span class="api-node-sub">Board acts</span></div></div>
-    </div>
-    <div class="api-feedback">
-      <div class="fb-node">Decision</div>
-      <div class="fb-seg"></div><div class="fb-head">⤶</div>
-      <div class="fb-node">Intervention</div>
-      <div class="fb-seg"></div><div class="fb-head">⤶</div>
-      <div class="fb-node">District update</div>
-      <div class="fb-seg" style="max-width:30px"></div>
-      <div class="fb-node" style="font-style:italic;opacity:.5;font-size:9px">tasteful · optional</div>
-    </div>
-  </div>
-  <p style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);margin-bottom:.75rem">Three access doors — what district officers use</p>
-  <div class="api-endpoint">
-    <div class="ep-row"><span class="ep-method ep-get">GET</span><span class="ep-path">/districts</span><span class="ep-desc">Returns all 146 districts with current scores — feeds the map automatically</span></div>
-    <div class="ep-row"><span class="ep-method ep-post">POST</span><span class="ep-path">/intervene</span><span class="ep-desc">District officer submits updated figures via token — map recolours in real time</span></div>
-    <div class="ep-row"><span class="ep-method ep-post">POST</span><span class="ep-path">/whatif</span><span class="ep-desc">Scenario planning — "what if we reduce burden here by 15%?" No commitment, instant preview</span></div>
-  </div>
-  <div class="pullquote">
-    Each district officer holds a token.<br>
-    They submit. The map updates.<br>
-    <em>No phone call. No report cycle. No delay.</em>
-  </div>
-  <div class="slide-ind">04 / 06</div>
-</section>
-
-<!-- ════════════════════════════ SLIDE 5 · FINANCE BRIDGE ════════════════════════════ -->
-<section class="slide" id="s5b">
-
-  <div class="slide-num">05 — The cost of the annual PDF</div>
-  <h2>Static numbers.<br><em>Dynamic losses.</em></h2>
-  <p class="lead">The figures below come from Uganda's most recent national health report — a static PDF, published once a year, consulted rarely. The twin turns every one of these numbers into a live dial. Move a weight. The map responds. See the economic consequence. No country in the world has this.</p>
-
-  <!-- ════ DUEL PANELS ════ -->
-  <div class="duel">
-
-    <!-- LEFT: Static PDF -->
-    <div class="panel panel-left">
-      <div class="panel-head">
-        <span class="panel-icon">📄</span>
-        <div class="panel-head-text">
-          <div class="panel-title">The Annual PDF</div>
-          <div class="panel-sub">Static · Published once · Consulted rarely</div>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="stat-card">
-          <div class="stat-n">US$4.5B</div>
-          <div class="stat-label">Projected annual losses by 2040</div>
-          <div class="stat-body">Mental health alone. Business-as-usual scenario. Productivity loss dominates — not treatment costs. This number grows faster than GDP. It is printed once a year and filed.</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-n">71%</div>
-          <div class="stat-label">Rise in facility cases 2021–2024</div>
-          <div class="stat-body">494,326 → 843,295 reported cases. Yet fewer than 1 in 10 people in need receive care. The cases are visible. The response is not matching. This is a table in Annex 3.</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-n">55%</div>
-          <div class="stat-label">District health posts unfilled</div>
-          <div class="stat-body">5,371 posts missing. 96% of the gap at community level — HC III, HC IV, General Hospital. Not at national referral. This is a footnote in the workforce chapter.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT: Live Twin -->
-    <div class="panel panel-right">
-      <div class="panel-head">
-        <span class="panel-icon">⚡</span>
-        <div class="panel-head-text">
-          <div class="panel-title">The Digital Twin Simulation</div>
-          <div class="panel-sub">Live · Responds to priorities · Updates in real time</div>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="stat-card">
-          <div class="stat-n" id="fin-loss-big">—</div>
-          <div class="stat-label">Projected loss trajectory · priority-adjusted</div>
-          <div class="stat-body">The PDF prints one number — US$4.5B — baked at one weighting, forever. Move the sliders and watch this change. The twin makes the assumption visible and arguable.</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-n" id="fin-cases-big">—</div>
-          <div class="stat-label">Modelled cases in need · receiving care</div>
-          <div class="stat-body">The PDF reports 71% case growth but fixes the care gap at 1-in-10. The twin lets you shift the workforce weight and see how that ratio moves across districts.</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-n" id="fin-districts-big">—</div>
-          <div class="stat-label">Districts with critical workforce gap</div>
-          <div class="stat-body">The PDF footnotes 55% of posts unfilled nationally. The twin surfaces which of the 146 districts are most exposed — and how that changes as you reprioritise.</div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /duel -->
-
-  <!-- ════ SLIDER BAR — full width, controls twin only ════ -->
-  <div class="slider-bar">
-    <div class="slider-bar-head">
-      <span class="slider-bar-icon">⚡</span>
-      <div>
-        <div class="slider-bar-title">Adjust the twin's weights</div>
-        <div class="slider-bar-sub">These sliders control the Digital Twin Simulation above — the PDF panel is fixed by definition</div>
-      </div>
-    </div>
-    <div class="slider-grid">
-      <div class="slider-row">
-        <span class="slider-name">Mental health priority</span>
-        <input type="range" class="fin-slider" id="fin-mh" min="10" max="70" value="35" oninput="finUpdate()">
-        <span class="slider-val" id="fin-mh-val">—</span>
-      </div>
-      <div class="slider-row">
-        <span class="slider-name">Mortality weight</span>
-        <input type="range" class="fin-slider" id="fin-mort" min="5" max="50" value="25" oninput="finUpdate()">
-        <span class="slider-val" id="fin-mort-val">—</span>
-      </div>
-      <div class="slider-row">
-        <span class="slider-name">Workforce gap proxy</span>
-        <input type="range" class="fin-slider" id="fin-wf" min="5" max="50" value="25" oninput="finUpdate()">
-        <span class="slider-val" id="fin-wf-val">—</span>
-      </div>
-      <div class="slider-row">
-        <span class="slider-name">Access / stockouts</span>
-        <input type="range" class="fin-slider" id="fin-so" min="5" max="40" value="15" oninput="finUpdate()">
-        <span class="slider-val" id="fin-so-val">—</span>
-      </div>
-    </div>
-  </div><!-- /slider-bar -->
-
-  <!-- ════ VERDICT STRIP ════ -->
-  <div class="verdict-strip">
-    <div class="verdict-col">
-      <div class="verdict-eyebrow">PDF gives you</div>
-      <div class="verdict-num" style="color:var(--red)">1</div>
-      <div class="verdict-label">Fixed weighting. Baked in by the authors. Consulted once a year. No scenario. No question. No Monday morning action.</div>
-    </div>
-    <div class="verdict-divider">
-      <div class="vd-line"></div>
-      <div class="vd-label">vs</div>
-      <div class="vd-line"></div>
-    </div>
-    <div class="verdict-col">
-      <div class="verdict-eyebrow">Twin gives you</div>
-      <div class="verdict-num" style="color:var(--gold2)">∞ paths</div>
-      <div class="verdict-label" id="verdict-exposure">All possible weightings, live. The map recolours. The decision is ready before the meeting ends.</div>
-    </div>
-    <div class="scenario-note" id="verdict-note">
-      Adjust the sliders above to see how reprioritising indicators shifts which districts are most at risk — and what the aggregate loss trajectory becomes.
-    </div>
-  </div><!-- /verdict-strip -->
-
-  <div class="pullquote">
-    The data already exists. The workforce gaps are already counted.<br>
-    The question is: <em>how long does it take for that information to change what a district officer does on Monday morning?</em>
-    <cite>— The core planning argument · SUPRE 2025</cite>
-  </div>
-
-  <div class="slide-ind">05 / 06</div>
-</section>
-
-<!-- ════════════════════════════ SLIDE 6 · SCALAR ════════════════════════════ -->
-<section class="slide" id="s5">
-  <div class="pstrip">
-    <div class="ps-step">① Tensor<strong>The Map</strong></div>
-    <div class="ps-step">② Matrix<strong>Colour Key</strong></div>
-    <div class="ps-step">③ Vector<strong>Dropdown</strong></div>
-    <div class="ps-step">④ Pipeline<strong>The API</strong></div>
-    <div class="ps-step active">⑤ Scalar<strong>Sovereignty</strong></div>
-  </div>
-  <div class="slide-num">06 — Scalar · The decision · And who controls it</div>
-  <h2>One answer.<br><em>Government holds the keys.</em></h2>
-  <p class="lead">Every compression of the tensor — every colour on the map, every dropdown choice, every pipeline update — collapses to a single actionable number. And that number, and all the data behind it, belongs to Government.</p>
-  <div class="scalar-box">
-    <div class="scalar-top">
-      <div class="s-eyebrow">Data Sovereignty · Uganda Data Protection &amp; Privacy Act 2019</div>
-      <div class="s-headline">
-        <em>Whoever holds the API keys<br>controls the data.</em><br>
-        In this model, the keys stay with Government.
-      </div>
-    </div>
-    <div class="scalar-grid">
-      <div class="sc-cell">
-        <div class="sc-label">What Government owns</div>
-        <div class="sc-body">All 146 district data streams. All indicator values. All historical records. Stored in a <strong>government-controlled repository</strong> — NPA holds the credentials, not Ukubona.</div>
-      </div>
-      <div class="sc-cell">
-        <div class="sc-label">What is rented</div>
-        <div class="sc-body">Compute only. The Ukubona engine runs calculations on cloud infrastructure — <strong>AWS / Azure / NITA-U</strong> — but the data returns immediately to the sovereign store. The compute is rented; the data is sovereign.</div>
-      </div>
-      <div class="sc-cell">
-        <div class="sc-label">The legal frame</div>
-        <div class="sc-body">Uganda's Data Protection and Privacy Act (2019) requires demonstrable access controls. This model satisfies that requirement. <strong>Aggregated district indicators, not individual identities.</strong> Visibility, not surveillance.</div>
-      </div>
-      <div class="sc-cell">
-        <div class="sc-label">The Ukubona role</div>
-        <div class="sc-body">Ukubona LLC maintains the engine — the compressor. <strong>The data is NPA's.</strong> If NPA ends the contract, the data stays with Government. The twin is a service, not a dependency.</div>
-      </div>
-    </div>
-    <div class="scalar-oneliner">
-      <em>"Whoever holds the API keys controls the data.<br>In this model, the keys stay with Government."</em>
-    </div>
-  </div>
-  <div class="slide-ind">06 / 06</div>
-</section>
-
-<footer class="site-footer">
-  <span class="footer-brand">Ukubona LLC</span>
-  <span class="footer-note">Source: SUPRE 2025 · NPA · December 2025</span>
-  <span class="footer-note">Kampala · 2025</span>
-</footer>
+<!-- APP IFRAME -->
+<div id="frame-wrap">
+  <iframe
+    id="app-frame"
+    src="https://ukb-0-method-sib-dt-v19.onrender.com/"
+    title="Ukubona NPA Digital Twin"
+    allow="fullscreen"
+    loading="eager"
+  ></iframe>
+</div>
 
 <script>
-// NAV
-function goTo(i){document.querySelectorAll('.slide')[i].scrollIntoView({behavior:'smooth'});}
-var slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.nav-dot');
-slides.forEach(function(s){
-  new IntersectionObserver(function(entries){
-    if(entries[0].isIntersecting&&entries[0].intersectionRatio>0.4){
-      var i=Array.from(slides).indexOf(s);
-      dots.forEach(function(d,j){d.classList.toggle('active',i===j);});
+  const frame  = document.getElementById('app-frame');
+  const loader = document.getElementById('loader');
+  const dot    = document.getElementById('status-dot');
+  const status = document.getElementById('status-text');
+
+  // Minimum loader display of 1.4s so the animation completes gracefully
+  let frameReady = false;
+  let minTimeDone = false;
+
+  function tryHideLoader() {
+    if (frameReady && minTimeDone) {
+      loader.classList.add('hidden');
+      dot.style.background = '#2ecc71';
+      status.textContent = 'Live';
     }
-  },{threshold:0.4}).observe(s);
-});
+  }
 
-// DROPDOWN
-var ddNotes={
-  mh:"<strong>Mental health burden:</strong> 24.2% adult prevalence nationally. Kampala, Arua, Gulu show highest district scores. Fewer than 1 in 10 people in need receive care. The red districts are the Monday-morning action list.",
-  tp:"<strong>Teenage pregnancy rate:</strong> Uganda has one of the highest rates in Sub-Saharan Africa. Northern and northeastern districts show the most acute burden. The Secretary's priority indicator.",
-  wf:"<strong>Workforce gap — health posts:</strong> 55% of required district posts unfilled. 5,371 posts missing. 96% of the gap is at HC III / HC IV level — community-facing cadres absent where early detection must happen.",
-  yu:"<strong>Youth unemployment:</strong> Over half of Ugandans aged 18–30 are not in education, employment, or training. 73% of the population is under 30. Mental ill-health and unemployment compound each other.",
-  ha:"<strong>Health facility access:</strong> Distance to nearest functioning facility ranges from under 2km in urban centres to over 30km in Karamoja. Red districts face access deserts, not just service gaps.",
-  ag:"<strong>Agricultural yield stress:</strong> Rainfall variability and soil degradation concentrated in eastern and northern districts. Economic stress at household level feeds directly into mental health burden.",
-  cl:"<strong>Climate vulnerability:</strong> Flood-prone districts in the east, drought-prone in the north. Climate risk is the upstream driver of most other indicators. The dropdown expands; the engine stays the same."
-};
-var ddLabels={mh:"Mental health burden",tp:"Teenage pregnancy rate",wf:"Workforce gap · health posts",yu:"Youth unemployment",ha:"Health facility access",ag:"Agricultural yield stress",cl:"Climate vulnerability"};
-function ddUpdate(){
-  var v=document.getElementById('ddSel').value;
-  document.getElementById('ddResult').innerHTML='<span>Viewing: '+ddLabels[v]+'</span> · Map recolours instantly';
-  document.getElementById('ddNote').innerHTML=ddNotes[v];
-}
+  setTimeout(() => { minTimeDone = true; tryHideLoader(); }, 1400);
 
-// FINANCE BRIDGE
-function finUpdate(){
-  var mh   = +document.getElementById('fin-mh').value;
-  var mort = +document.getElementById('fin-mort').value;
-  var wf   = +document.getElementById('fin-wf').value;
-  var so   = +document.getElementById('fin-so').value;
-  var T = mh + mort + wf + so;
-  var pMH   = Math.round(mh   / T * 100);
-  var pMort = Math.round(mort / T * 100);
-  var pWF   = Math.round(wf   / T * 100);
-  var pSO   = Math.round(so   / T * 100);
+  frame.addEventListener('load', () => {
+    frameReady = true;
+    tryHideLoader();
+  });
 
-  document.getElementById('fin-mh-val').textContent   = pMH   + '%';
-  document.getElementById('fin-mort-val').textContent = pMort + '%';
-  document.getElementById('fin-wf-val').textContent   = pWF   + '%';
-  document.getElementById('fin-so-val').textContent   = pSO   + '%';
+  // Fallback — if iframe never fires load (cross-origin), hide after 6s
+  setTimeout(() => {
+    frameReady = true;
+    tryHideLoader();
+  }, 6000);
 
-  var mhDrive = pMH / 35;
-  var wfDrive = wf  / 25;
-
-  // Row 1 — mirrors US$4.5B
-  var lossAdj = (4.5 * (0.7 + 0.3 * mhDrive * wfDrive)).toFixed(1);
-  document.getElementById('fin-loss-big').textContent = 'US$' + lossAdj + 'B';
-
-  // Row 2 — mirrors 71% case rise: % receiving care
-  var careRate = Math.round(10 + (pMort / 25) * 6 + (pMH / 35) * 4);
-  careRate = Math.max(8, Math.min(28, careRate));
-  document.getElementById('fin-cases-big').textContent = careRate + '%';
-
-  // Row 3 — mirrors 55% posts unfilled: districts at critical gap
-  var atRisk = Math.round(14 + (mhDrive - 1) * 8 + (wfDrive - 1) * 5);
-  atRisk = Math.max(8, Math.min(40, atRisk));
-  document.getElementById('fin-districts-big').textContent = atRisk + ' / 146';
-
-  // Verdict exposure text
-  var expText = (pMH > 45)
-    ? 'Mental health dominant. Northern and urban districts deepest red. Economic trajectory worsens fastest here — <strong>this is what the PDF cannot show you.</strong>'
-    : (pMH < 22)
-    ? 'Workforce gap and access proxies surface. Different districts turn red. Same data — <strong>completely different direction of intervention.</strong>'
-    : 'Balanced priorities. Distributed burden. No single indicator dominates. <strong>This is the baseline the annual report assumes — but never questions.</strong>';
-  document.getElementById('verdict-exposure').innerHTML = expText;
-
-  var noteText = (pMH > 45)
-    ? 'With mental health above 45% of the composite weight, the economic loss trajectory accelerates. <strong>The red districts are the Monday-morning action list.</strong>'
-    : (pMH < 22)
-    ? 'With mental health de-prioritised, structural gaps surface. Workforce and access become the primary signal. Different ministerial desks. Different budget lines. Same 146 districts — different map.'
-    : 'Balanced weights produce the baseline scenario the annual PDF encodes, silently, by never surfacing its own assumptions. <strong>The twin makes the assumptions visible — and arguable.</strong>';
-  document.getElementById('verdict-note').innerHTML = noteText;
-}
-finUpdate();
-
-// ROADMAP
-var rmOpen=false;
-function rmTog(){
-  rmOpen=!rmOpen;
-  document.getElementById('rmPanel').classList.toggle('open',rmOpen);
-  document.getElementById('rmIcon').classList.toggle('open',rmOpen);
-  document.getElementById('rmBtn').style.borderRadius=rmOpen?'8px 8px 0 0':'8px';
-}
+  // Status dot: turn amber while waiting
+  setTimeout(() => {
+    if (!frameReady) {
+      dot.style.background = '#f39c12';
+      status.textContent = 'Loading…';
+    }
+  }, 2000);
 </script>
 </body>
 </html>
